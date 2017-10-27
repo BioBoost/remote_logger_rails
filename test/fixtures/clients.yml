@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  auth_key: MyString
-  description: MyString
+  name: simple_first_client
+  auth_key: a1234567
+  description: Some description of the first client
 
 two:
-  name: MyString
-  auth_key: MyString
-  description: MyString
+  name: simple_second_client
+  auth_key: qwertyop
+  description: Some description of the second client
