@@ -15,6 +15,7 @@ Send post request will following content:
   "severity": "verbose|info|debug|warning|error",
   "logtime": "optional log timestamp - format will be known later on"
 }
+```
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
