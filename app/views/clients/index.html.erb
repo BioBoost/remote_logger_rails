@@ -1,61 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Clients</h1>
-
 <div class="row">
-  <div class="large-4 columns">
-    <img src="https://placehold.it/400x300&text=[img]" />
-    <h4>This is a content section.</h4>
-    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-    <ul class="stats-list">
-      <li>
-        135 <span class="stats-list-label">Commits</span>
-      </li>
-      <li class="stats-list-positive">
-        17,678 <span class="stats-list-label">Additions</span>
-      </li>
-      <li class="stats-list-negative">
-        2,390 <span class="stats-list-label">Deletions</span>
-      </li>
-    </ul>
-  </div>
-  <div class="large-4 columns">
-    <img src="https://placehold.it/400x300&text=[img]" />
-    <h4>This is a content section.</h4>
-    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-  </div>
-  <div class="large-4 columns">
-    <img src="https://placehold.it/400x300&text=[img]" />
-    <h4>This is a content section.</h4>
-    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+  <div class="large-12 columns">
+    <div class="client-listing">
+      <% @clients.each do |client| %>
+        <%= render partial: 'client', locals: { client: client } %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Auth key</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.name %></td>
-        <td><%= client.auth_key %></td>
-        <td><%= client.description %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Client', new_client_path %>

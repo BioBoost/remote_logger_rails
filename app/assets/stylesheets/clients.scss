@@ -1,3 +1,110 @@
 // Place all the styles related to the Clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'settings';
+@import 'foundation';
+
+// Source: https://foundation.zurb.com/building-blocks/blocks/stats-list.html
+
+.stats-list {
+  list-style-type: none;
+  clear: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 30px;
+
+  .stats-list-errors {
+    color: $alert-color;
+  }
+
+  .stats-list-warnings {
+    color: $warning-color;
+  }
+
+  & > li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $medium-gray;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+
+    &:last-child {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .stats-list-label {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+  }
+}
+
+// Source: https://foundation.zurb.com/building-blocks/blocks/people-you-might-know.html
+
+.client-listing {
+  background-color: $white;
+  padding: 1rem 0 0;
+  border: 1px solid $medium-gray;
+  box-shadow: 0 0 rem-calc(50) rgba(0,0,0, 0.18);
+
+  .show-client-section {
+    margin: 1rem 0 0;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid $medium-gray;
+
+    .about-client {
+      display: flex;
+      align-items: flex-start;
+
+      .about-client-avatar {
+        padding-right: 0.5rem;
+        padding-left: 0;
+
+        .client-image {
+          width: rem-calc(80);
+          height: rem-calc(80);
+          border-radius: 50%;
+          border: 0.0625rem solid $medium-gray;
+        }
+      }
+
+      .client-details {
+        flex: 1 0 0;
+
+        .client-title {
+          color: $black;
+          margin: 0.375rem 0 0;
+        }
+
+        .client-description {
+          color: $dark-gray;
+          margin-bottom: 0;
+          font-size: 0.85em;
+        }
+      }
+    }
+
+    .client-stats-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(small only) {
+        justify-content: flex-start;
+      }
+
+      .client-log-stats {
+        margin-top: 0.7rem;
+      }
+    }
+  }
+
+}
