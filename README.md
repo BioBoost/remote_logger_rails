@@ -39,3 +39,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### Weird Things
+
+I did install jquery-ujs via npm, as stated on some forum, but not sure if needed. Removed all files and package.json ad it still works. So who knows.
+
+```shell
+npm install --save jquery-ujs
+```
