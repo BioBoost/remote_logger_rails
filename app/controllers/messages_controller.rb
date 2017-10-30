@@ -16,10 +16,8 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    # if (request.format.symbol == :json)
     client = Client.find_by_auth_key(params[:auth_key])
     @message.client = client
-    # end
 
     if @message.save
       render :show, status: :created, location: @message
