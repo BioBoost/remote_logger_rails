@@ -1,11 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="large-12 columns">
-    <div class="client-listing">
-      <% @clients.each do |client| %>
-        <%= render partial: 'client', locals: { client: client } %>
-      <% end %>
-    </div>
-  </div>
+<div class="client-listing">
+  <% @clients.each do |client| %>
+    <%= render partial: 'client_details', locals: { client: client } %>
+  <% end %>
 </div>

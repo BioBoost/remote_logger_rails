@@ -51,14 +51,19 @@
 
 .client-listing {
   background-color: $white;
-  padding: 1rem 0 0;
-  border: 1px solid $medium-gray;
+  padding-left: 1rem;
+  padding-right: 1rem;
   box-shadow: 0 0 rem-calc(50) rgba(0,0,0, 0.18);
 
   .show-client-section {
-    margin: 1rem 0 0;
     padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
     border-bottom: 0.0625rem solid $medium-gray;
+
+    &:hover {
+      background-color: scale-color($primary-color, $lightness: 80%);
+    }
 
     .about-client {
       display: flex;
@@ -104,6 +109,10 @@
       .client-log-stats {
         margin-top: 0.7rem;
       }
+    }
+
+    &:last-child {
+      border: none;
     }
   }
 
