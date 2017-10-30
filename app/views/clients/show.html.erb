@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit Client Details', edit_client_path(@client), class: 'button rounded large float-right' %>
+<%= link_to 'Destroy Client', @client, method: :delete, data: { confirm: 'Are you really sure?' }, class: 'button alert rounded large float-right' %>
+
 <p>
   <strong>Name:</strong>
   <%= @client.name %>
