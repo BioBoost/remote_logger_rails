@@ -16,13 +16,13 @@
     <div class="client-log-stats">
       <ul class="stats-list">
         <li>
-          17,678 <span class="stats-list-label">Messages</span>
+          <%= client.number_of_messages %> <span class="stats-list-label">Messages</span>
         </li>
         <li class="stats-list-warnings">
-          2,390 <span class="stats-list-label">Warnings</span>
+          <%= client.number_of_warnings %> <span class="stats-list-label">Warnings</span>
         </li>
         <li class="stats-list-errors">
-          135 <span class="stats-list-label">Errors</span>
+          <%= client.number_of_errors %> <span class="stats-list-label">Errors</span>
         </li>
       </ul>
     </div>
