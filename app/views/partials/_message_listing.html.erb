@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="large-12 columns">
+
+    <% @messages.each do |message| %>
+      <%= render partial: "partials/message_details", locals: {
+          severity: message.severity, timestamp: message.logtime, message: message.content
+        }
+      %>
+    <% end %>
+
+  </div>
+</div>

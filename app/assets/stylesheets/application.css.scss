@@ -28,3 +28,10 @@ $button-rounded-hover-radius: 5000px;
 .rounded {
   border-radius: $button-rounded-hover-radius;
 }
+
+.button {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

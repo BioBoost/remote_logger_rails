@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit Client Details', edit_client_path(@client), class: 'button rounded large float-right' %>
 <p>
   <strong>Name:</strong>
   <%= @client.name %>
@@ -15,5 +16,5 @@
   <%= @client.description %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<h3>Messages from Client</h3>
+<%= render partial: 'partials/message_listing' %>
