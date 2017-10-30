@@ -22,3 +22,9 @@
 footer {
   padding: 1rem;
 }
+
+$button-rounded-hover-radius: 5000px;
+
+.rounded {
+  border-radius: $button-rounded-hover-radius;
+}

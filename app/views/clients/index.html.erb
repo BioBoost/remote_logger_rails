@@ -1,7 +1,14 @@
+<% provide(:title, "Clients") %>
 <p id="notice"><%= notice %></p>
 
 <div class="client-listing">
   <% @clients.each do |client| %>
     <%= render partial: 'client_details', locals: { client: client } %>
   <% end %>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <%= link_to 'Register New Client', new_client_path, class: 'button rounded large float-right' %>
+  </div>
 </div>
