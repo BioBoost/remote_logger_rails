@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: [:show, :edit, :update, :destroy, :clear_messages]
 
   # GET /clients
   def index
@@ -44,6 +44,11 @@ class ClientsController < ApplicationController
   def destroy
     @client.destroy
     redirect_to clients_url, notice: 'Client was successfully destroyed.'
+  end
+
+  def clear_messages
+    @client.messages.destroy_all
+    redirect_to @client, notice: 'Messages were successfully cleared.'
   end
 
   private

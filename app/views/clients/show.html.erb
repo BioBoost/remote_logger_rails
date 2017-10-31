@@ -1,22 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit Client Details', edit_client_path(@client), class: 'button rounded large float-right' %>
-<%= link_to 'Destroy Client', @client, method: :delete, data: { confirm: 'Are you really sure?' }, class: 'button alert rounded large float-right' %>
+<div class="row">
+  <div class="large-4 columns">
+    <%= link_to 'Edit Client Details', edit_client_path(@client), class: 'button rounded large float-right expanded' %>
+  </div>
+    <div class="large-4 columns">
+      <%=
+        link_to(
+          "Clear Messages",
+          clear_messages_path(@client),
+          method: :delete,
+          data: { confirm: 'Are you sure?' },
+          class: 'button success rounded large float-right expanded'
+        )
+      %>
+    </div>
+  <div class="large-4 columns">
+    <%= link_to 'Destroy Client', @client, method: :delete, data: { confirm: 'Are you really sure?' }, class: 'button alert rounded large float-right expanded' %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<div class="row callout secondary">
+  <div class="large-12 columns">
+    <p>
+      <strong>Name:</strong>
+      <%= @client.name %>
+    </p>
 
-<p>
-  <strong>Auth key:</strong>
-  <%= @client.auth_key %>
-</p>
+    <p>
+      <strong>Auth key:</strong>
+      <%= @client.auth_key %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @client.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @client.description %>
+    </p>
+  </div>
+</div>
 
-<h3>Messages from Client</h3>
 <%= render partial: 'partials/message_listing' %>
