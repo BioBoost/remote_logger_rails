@@ -10,10 +10,19 @@ Send post request will following content:
 
 ```json
 {
-  "message": "The log message",
-  "auth_key": "8 character client authentication key - will later be upgraded to 32 of 64 chars",
-  "severity": "verbose|info|debug|warning|error",
-  "logtime": "optional log timestamp - format will be known later on"
+    "auth_key": "8 character client authentication key - will later be upgraded to 32 of 64 chars",
+    "messages": [
+        {
+            "content": "Another test from Insomnia1",
+            "severity": "verbose|info|debug|warning|error",
+            "logtime": "optional log timestamp - format will be known later on"
+        },
+        {
+            "content": "Some test example",
+            "severity": "error",
+            "logtime": "2017-10-27T19:11:00.000Z"
+        }
+    ]
 }
 ```
 

@@ -15,14 +15,28 @@ class MessagesController < ApplicationController
 
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
-    client = Client.find_by_auth_key(params[:auth_key])
-    @message.client = client
+    client = Client.find_by_auth_key(params.require(:auth_key))
+    safe_messages = params.permit(messages: [ :content, :severity, :logtime ])
 
-    if @message.save
-      render :show, status: :created, location: @message
+    allGood = true
+    safe_messages[:messages].each do |msg|
+      newMessage = Message.new(msg)
+      newMessage.client = client
+      allGood = allGood and newMessage.save
+    end
+
+    if allGood
+      payload = {
+        result: "Messages created successfully",
+        status: 201
+      }
+      render :json => payload, :status => :created
     else
-      render json: @message.errors, status: :unprocessable_entity
+      payload = {
+        result: "Failed to create messages",
+        status: 400
+      }
+      render :json => payload, :status => :bad_request
     end
   end
 
