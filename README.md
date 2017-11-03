@@ -57,3 +57,31 @@ I did install jquery-ujs via npm, as stated on some forum, but not sure if neede
 ```shell
 npm install --save jquery-ujs
 ```
+
+## Docker
+
+Make sure to rename the file `.env.web.example` to `.env.web` and configure the secret.
+
+Building the image
+
+```shell
+docker-compose build
+```
+
+Running it
+
+```shell
+docker-compose up -d
+```
+
+Stopping it
+
+```shell
+docker-compose down
+```
+
+Need an interactive shell ?
+
+```shell
+docker-compose run remote_logger_rails /bin/bash
+```
